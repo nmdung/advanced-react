@@ -9,11 +9,9 @@ const { Link, Text } = Typography
 const User = () => {
   const { data } = useQuery(GetUserDocument)
 
-  console.log(data?.viewer.login)
-
   return (
-    <Link href='https://github.com/hweeTan' target='_blank'>
-      <Text strong>Huy Tran</Text>
+    <Link href={data?.viewer?.url} target='_blank'>
+      <Text strong>{data?.viewer?.name}</Text>
       <Badge count={5}>
         <Avatar
           style={{ margin: 0, marginLeft: 16 }}

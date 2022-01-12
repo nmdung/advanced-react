@@ -11,13 +11,15 @@ import gql from 'graphql-tag';
 export type GetUserQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetUserQuery = { viewer: { login: string } };
+export type GetUserQuery = { viewer: { login: string, name?: string | null | undefined, url: any } };
 
 
 export const GetUserDocument = gql`
     query GetUser {
   viewer {
     login
+    name
+    url
   }
 }
     ` as unknown as DocumentNode<GetUserQuery, GetUserQueryVariables>;
