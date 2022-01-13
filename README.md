@@ -1,3 +1,3 @@
-# Advanced React
+# Todo App with Typescript
 
-Hi, guys
+-   Apply clean architecture
