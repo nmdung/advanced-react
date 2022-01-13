@@ -1,21 +1,20 @@
 import { ITodo } from '../interfaces/ITodo'
 import { ITodoStore } from '../interfaces/ITodoStore'
 
-//type AddTodoProvider = Pick<ITodoStore, 'todos' | 'addTodo' | 'setTodos'>
-type AddTodoProvider = Pick<ITodoStore, 'todos' | 'setTodos'>
+type AddTodoStore = Pick<ITodoStore, 'todos' | 'setTodos'>
 
-export const addTodoUseCase = (store: AddTodoProvider, newTask: ITodo) => {
-    //store.addTodo(newTask)
+export const addTodoUseCase = (store: AddTodoStore, newTodo: ITodo) => {
     const { todos, setTodos } = store
-    const newTodos = [newTask, ...todos]
-    if (!newTask.text || /^\s*$/.test(newTask.text)) {
+    const newTodos = [newTodo, ...todos]
+    if (!newTodo.text || /^\s*$/.test(newTodo.text)) {
         return
     }
 
     if (newTodos.length !== 0) {
         let i = 1
         while (i < newTodos.length) {
-            if (newTodos[i].text === newTask.text) {
+            if (newTodos[i].text === newTodo.text) {
+                // Todo: set model open
                 //setModalIsOpen(true)
             }
             i++

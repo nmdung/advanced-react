@@ -8,13 +8,13 @@ import { updateTodoUseCase } from '../useCases/updateTodo'
 
 export const useTodos = (store: ITodoStore) => {
     const addTodo = React.useCallback(
-        (newTask: ITodo) => {
+        (newTodo: ITodo) => {
             addTodoUseCase(
                 {
                     todos: store.todos,
                     setTodos: store.setTodos
                 },
-                newTask
+                newTodo
             )
         },
         [store.todos, store.setTodos]
@@ -34,8 +34,8 @@ export const useTodos = (store: ITodoStore) => {
     )
 
     const updateTodo = React.useCallback(
-        (activeId: ITodo['id'], newTask: ITodo) => {
-            updateTodoUseCase({ todos: store.todos, setTodos: store.setTodos }, activeId, newTask)
+        (activeId: ITodo['id'], newTodo: ITodo) => {
+            updateTodoUseCase({ todos: store.todos, setTodos: store.setTodos }, activeId, newTodo)
         },
         [store.todos, store.setTodos]
     )
