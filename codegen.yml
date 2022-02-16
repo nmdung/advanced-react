@@ -1,5 +1,7 @@
 overwrite: true
-schema: ./node_modules/@octokit/graphql-schema/schema.graphql
+schema:
+  - ./src/local-schema.graphql
+  - ./node_modules/@octokit/graphql-schema/schema.graphql
 config:
   namingConvention:
     enumValues: "keep"

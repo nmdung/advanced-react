@@ -1,27 +1,36 @@
-import { ReactNode } from 'react'
 import type { RouteObject } from 'react-router-dom'
-import { HomeOutlined, PullRequestOutlined } from '@ant-design/icons'
-import Home from './pages/Home'
-import PullRequests from './pages/PullRequests'
+import HomePage from './pages/HomePage'
+//import PullRequests from './pages/PullRequests'
 
 type Route = RouteObject & {
-  icon: ReactNode
-  title: string
+  title: string,
+  showInMenu: boolean
 }
 
 const routes: Route[] = [
   {
     path: '/',
-    element: <Home />,
-    icon: <HomeOutlined />,
+    element: <HomePage />,
     title: 'Home',
+    showInMenu: false
   },
   {
     path: '/pulls',
-    element: <PullRequests />,
-    icon: <PullRequestOutlined />,
+    element: <HomePage />,
     title: 'Pull Requests',
+    showInMenu: true
+  },
+  {
+    path: '/issues',
+    element: <HomePage />,
+    title: 'Issues',
+    showInMenu: true
   },
 ]
 
+// const RenderRouter: FC = () => {
+//   const element = useRoutes(routeList);
+
+//   return element;
+// };
 export default routes
