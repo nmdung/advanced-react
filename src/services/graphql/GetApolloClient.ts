@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import currentRepoVar from "./localStates/currentRepo";
-import { graphqlAPI, tokenAPI } from "./config";
+import { graphqlAPI, tokenAPI } from "./constants";
 
 export const GetApolloClient = () => {
   const httpLink = createHttpLink({ uri: graphqlAPI });
