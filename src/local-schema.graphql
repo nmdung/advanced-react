@@ -1,0 +1,15 @@
+#./client-schema.graphql
+
+# see: https://www.apollographql.com/docs/react/local-state/managing-state-with-field-policies/
+directive @client on FIELD
+
+type CurrentRepo {
+  owner: String!
+  name: String!
+}
+
+extend type Query {
+  currentRepo: CurrentRepo!
+}
+
+directive @export(as: String!) on FIELD

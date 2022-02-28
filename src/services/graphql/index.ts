@@ -1,0 +1,1 @@
+export { GetApolloClient } from "./GetApolloClient";

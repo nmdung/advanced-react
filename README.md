@@ -1,3 +1,3 @@
-# Advanced React
+# 06 Codegen
 
-Hi, guys
+Add codegen to fun-with-github project.
